@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Learning Roadmap | SkillGap</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="app">
+
+    <!-- ============ SIDEBAR ============ -->
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="index.html" aria-label="SkillGap home">
+        <span class="brand__mark" data-icon="logo"></span>
+        <span class="brand__name">SkillGap</span>
+      </a>
+
+      <nav class="side-nav" aria-label="Main">
+        <a class="side-link" href="dashboard.html"><span class="icon" data-icon="dashboard"></span>Dashboard</a>
+        <a class="side-link" href="dashboard.html#skills"><span class="icon" data-icon="code"></span>My Skills</a>
+        <a class="side-link" href="dashboard.html#gaps"><span class="icon" data-icon="target"></span>Skill Gap</a>
+        <a class="side-link" href="roadmap.html" aria-current="page"><span class="icon" data-icon="route"></span>Roadmap</a>
+        <a class="side-link" href="analyzer.html"><span class="icon" data-icon="file"></span>Job Analyzer</a>
+        <a class="side-link" href="#"><span class="icon" data-icon="sliders"></span>Settings</a>
+      </nav>
+
+      <div class="side-card">
+        <p>Target role</p>
+        <strong>Frontend Developer</strong>
+        <a href="assessment.html">Change role</a>
+      </div>
+    </aside>
+
+    <div class="scrim"></div>
+
+    <div>
+      <div class="topbar">
+        <a class="brand" href="index.html" aria-label="SkillGap home">
+          <span class="brand__mark" data-icon="logo"></span>
+          <span class="brand__name">SkillGap</span>
+        </a>
+        <button class="menu-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="sidebar" aria-label="Open menu">
+          <span class="icon" data-icon="menu"></span>
+        </button>
+      </div>
+
+      <main class="page" id="main">
+
+        <div class="page-head">
+          <div>
+            <h1>Your Learning Roadmap</h1>
+            <p>Five weeks to close your biggest Frontend Developer gaps.</p>
+          </div>
+        </div>
+
+        <!-- ============ OVERALL PROGRESS (updated by roadmap.js) ============ -->
+        <section class="overall panel" aria-labelledby="overall-title">
+          <div>
+            <h2 id="overall-title">Overall progress</h2>
+            <p class="overall__count" id="overall-count">0 of 5 weeks complete</p>
+          </div>
+          <div>
+            <div class="overall__row"><span>Roadmap</span><strong id="overall-percent">0%</strong></div>
+            <div class="gapbar gapbar--lg" id="overall-bar" role="img" aria-label="Overall roadmap progress">
+              <div class="gapbar__fill"></div>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- ============ TIMELINE ============
+             Each <li class="week"> is one week.
+             data-progress = the starting progress for that week (0–100).
+             To add a week, copy one <li> block and change the text. -->
+        <ol class="timeline">
+
+          <li class="week" data-progress="60">
+            <span class="week__node"><span class="num">1</span><span class="icon" data-icon="check"></span></span>
+            <article class="week__card panel">
+              <div class="week__top">
+                <span class="week__label">Week 1</span>
+                <span class="week__status">Not started</span>
+              </div>
+              <h2 class="week__title">React Fundamentals</h2>
+              <ul class="topics">
+                <li>Components and JSX</li>
+                <li>Props and state</li>
+                <li>Handling events</li>
+                <li>Lists and conditional rendering</li>
+              </ul>
+              <div class="week__progress">
+                <div class="gapbar" role="img" aria-label="Week 1 progress"><div class="gapbar__fill"></div></div>
+                <span class="week__percent">0%</span>
+              </div>
+              <label class="week__done">
+                <input class="visually-hidden" type="checkbox">
+                <span class="week__box"><span class="icon" data-icon="check"></span></span>
+                Mark week complete
+              </label>
+            </article>
+          </li>
+
+          <li class="week" data-progress="0">
+            <span class="week__node"><span class="num">2</span><span class="icon" data-icon="check"></span></span>
+            <article class="week__card panel">
+              <div class="week__top">
+                <span class="week__label">Week 2</span>
+                <span class="week__status">Not started</span>
+              </div>
+              <h2 class="week__title">Advanced React</h2>
+              <ul class="topics">
+                <li>useEffect and data flow</li>
+                <li>Custom hooks</li>
+                <li>Context API</li>
+                <li>Routing with React Router</li>
+              </ul>
+              <div class="week__progress">
+                <div class="gapbar" role="img" aria-label="Week 2 progress"><div class="gapbar__fill"></div></div>
+                <span class="week__percent">0%</span>
+              </div>
+              <label class="week__done">
+                <input class="visually-hidden" type="checkbox">
+                <span class="week__box"><span class="icon" data-icon="check"></span></span>
+                Mark week complete
+              </label>
+            </article>
+          </li>
+
+          <li class="week" data-progress="0">
+            <span class="week__node"><span class="num">3</span><span class="icon" data-icon="check"></span></span>
+            <article class="week__card panel">
+              <div class="week__top">
+                <span class="week__label">Week 3</span>
+                <span class="week__status">Not started</span>
+              </div>
+              <h2 class="week__title">REST APIs</h2>
+              <ul class="topics">
+                <li>HTTP methods and status codes</li>
+                <li>fetch and async/await</li>
+                <li>Loading and error states</li>
+                <li>Working with JSON</li>
+              </ul>
+              <div class="week__progress">
+                <div class="gapbar" role="img" aria-label="Week 3 progress"><div class="gapbar__fill"></div></div>
+                <span class="week__percent">0%</span>
+              </div>
+              <label class="week__done">
+                <input class="visually-hidden" type="checkbox">
+                <span class="week__box"><span class="icon" data-icon="check"></span></span>
+                Mark week complete
+              </label>
+            </article>
+          </li>
+
+          <li class="week" data-progress="0">
+            <span class="week__node"><span class="num">4</span><span class="icon" data-icon="check"></span></span>
+            <article class="week__card panel">
+              <div class="week__top">
+                <span class="week__label">Week 4</span>
+                <span class="week__status">Not started</span>
+              </div>
+              <h2 class="week__title">TypeScript</h2>
+              <ul class="topics">
+                <li>Types and interfaces</li>
+                <li>Typing props and state</li>
+                <li>Generics basics</li>
+                <li>Converting JavaScript to TypeScript</li>
+              </ul>
+              <div class="week__progress">
+                <div class="gapbar" role="img" aria-label="Week 4 progress"><div class="gapbar__fill"></div></div>
+                <span class="week__percent">0%</span>
+              </div>
+              <label class="week__done">
+                <input class="visually-hidden" type="checkbox">
+                <span class="week__box"><span class="icon" data-icon="check"></span></span>
+                Mark week complete
+              </label>
+            </article>
+          </li>
+
+          <li class="week" data-progress="0">
+            <span class="week__node"><span class="num">5</span><span class="icon" data-icon="check"></span></span>
+            <article class="week__card panel">
+              <div class="week__top">
+                <span class="week__label">Week 5</span>
+                <span class="week__status">Not started</span>
+              </div>
+              <h2 class="week__title">Build a Project</h2>
+              <ul class="topics">
+                <li>Plan the features</li>
+                <li>Build an app with a public API</li>
+                <li>Deploy to Netlify or Vercel</li>
+                <li>Write a clear README</li>
+              </ul>
+              <div class="week__progress">
+                <div class="gapbar" role="img" aria-label="Week 5 progress"><div class="gapbar__fill"></div></div>
+                <span class="week__percent">0%</span>
+              </div>
+              <label class="week__done">
+                <input class="visually-hidden" type="checkbox">
+                <span class="week__box"><span class="icon" data-icon="check"></span></span>
+                Mark week complete
+              </label>
+            </article>
+          </li>
+
+        </ol>
+
+      </main>
+    </div>
+  </div>
+
+  <script src="icons.js"></script>
+  <script src="main.js"></script>
+  <script src="roadmap.js"></script>
+</body>
+</html>
