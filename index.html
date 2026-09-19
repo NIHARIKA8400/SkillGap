@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
 
 <head>
     <meta charset="UTF-8">
@@ -61,4 +62,255 @@
 
 </body>
 
+=======
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SkillGap: Know where you are. Know where you're going.</title>
+  <meta name="description" content="Discover the skills you need for your dream tech career and build a personalized learning roadmap.">
+
+  <!-- Fonts (Google Fonts). If they can't load, the page falls back to system fonts. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ HEADER (same on landing + assessment) ============ -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html" aria-label="SkillGap home">
+        <span class="brand__mark" data-icon="logo"></span>
+        <span class="brand__name">SkillGap</span>
+      </a>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <a href="#careers">Careers</a>
+        <a href="#how">How it works</a>
+        <a href="analyzer.html">Job Analyzer</a>
+        <a href="dashboard.html">Dashboard</a>
+      </nav>
+
+      <a class="btn btn--primary btn--sm site-header__cta" href="assessment.html">Analyze My Skills</a>
+
+      <button class="menu-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span class="icon" data-icon="menu"></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="container hero__grid">
+
+        <div class="hero__copy">
+          <!-- The two lines are joined by a dashed path drawn in CSS -->
+          <h1 class="hero__title">
+            <span class="hero__from">Know where you are.</span>
+            <span class="hero__to">Know where you’re going.</span>
+          </h1>
+
+          <p class="hero__text">
+            Discover the skills you need for your dream tech career and build a personalized learning roadmap.
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn btn--primary btn--lg" href="assessment.html">Analyze My Skills</a>
+            <a class="btn btn--secondary btn--lg" href="#careers">Explore Careers</a>
+          </div>
+
+          <p class="hero__note">Made for students and freshers. No account needed to try it.</p>
+        </div>
+
+        <!-- Dashboard preview (static example data) -->
+        <div class="hero__preview">
+          <div class="preview panel">
+            <div class="preview__top">
+              <span class="preview__role"><span class="icon" data-icon="frontend"></span>Frontend Developer</span>
+              <span class="preview__hint">Sample dashboard</span>
+            </div>
+
+            <div class="preview__score">
+              <!-- Circular progress. Change style="--value: 68" to change the fill (0–100). -->
+              <div class="ring ring--sm" style="--value: 68" role="img" aria-label="Career readiness: 68 percent">
+                <svg viewBox="0 0 120 120" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0" stop-color="#38bdf8"/>
+                      <stop offset="0.5" stop-color="#6366f1"/>
+                      <stop offset="1" stop-color="#8b5cf6"/>
+                    </linearGradient>
+                  </defs>
+                  <circle class="ring__track" cx="60" cy="60" r="52" pathLength="100"/>
+                  <circle class="ring__value" cx="60" cy="60" r="52" pathLength="100"/>
+                </svg>
+                <div class="ring__label"><strong>68%</strong></div>
+              </div>
+              <div>
+                <h3>Career readiness</h3>
+                <p>You already cover most of the fundamentals. Three skills are holding you back.</p>
+              </div>
+            </div>
+
+            <div class="preview__group">
+              <h3>Skills you have</h3>
+              <ul class="tag-list tag-list--stagger">
+                <li class="tag tag--have" style="--i: 0"><span class="icon" data-icon="check"></span>HTML</li>
+                <li class="tag tag--have" style="--i: 1"><span class="icon" data-icon="check"></span>CSS</li>
+                <li class="tag tag--have" style="--i: 2"><span class="icon" data-icon="check"></span>JavaScript</li>
+                <li class="tag tag--have" style="--i: 3"><span class="icon" data-icon="check"></span>Git</li>
+              </ul>
+            </div>
+
+            <div class="preview__group">
+              <h3>Skills to add</h3>
+              <ul class="tag-list tag-list--stagger">
+                <li class="tag tag--missing" style="--i: 4"><span class="icon" data-icon="x"></span>React</li>
+                <li class="tag tag--missing" style="--i: 5"><span class="icon" data-icon="x"></span>TypeScript</li>
+                <li class="tag tag--missing" style="--i: 6"><span class="icon" data-icon="x"></span>REST APIs</li>
+              </ul>
+            </div>
+
+            <div class="preview__progress">
+              <div class="row"><span>Roadmap progress</span><strong>Week 1 of 5</strong></div>
+              <div class="gapbar" style="--value: 20" role="img" aria-label="Roadmap progress: 20 percent">
+                <div class="gapbar__fill"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="preview__float panel">
+            <span class="tile"><span class="icon" data-icon="atom"></span></span>
+            <p>Next up<strong>React fundamentals</strong></p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============ POPULAR CAREER PATHS ============ -->
+    <section class="section" id="careers">
+      <div class="container">
+        <div class="section__head">
+          <h2>Popular career paths</h2>
+          <p>Pick a path and see exactly which skills stand between you and your first role.</p>
+        </div>
+
+        <!-- Each card links to the assessment page with the role pre-selected (?role=...) -->
+        <ul class="career-grid">
+          <li>
+            <a class="career-card" href="assessment.html?role=frontend">
+              <span class="tile"><span class="icon" data-icon="frontend"></span></span>
+              <h3>Frontend Developer</h3>
+              <p>Build the interfaces people see and click.</p>
+              <ul class="mini-tags"><li>HTML</li><li>CSS</li><li>React</li></ul>
+            </a>
+          </li>
+          <li>
+            <a class="career-card" href="assessment.html?role=backend">
+              <span class="tile"><span class="icon" data-icon="backend"></span></span>
+              <h3>Backend Developer</h3>
+              <p>Design the servers and APIs behind every app.</p>
+              <ul class="mini-tags"><li>Node.js</li><li>SQL</li><li>APIs</li></ul>
+            </a>
+          </li>
+          <li>
+            <a class="career-card" href="assessment.html?role=fullstack">
+              <span class="tile"><span class="icon" data-icon="fullstack"></span></span>
+              <h3>Full Stack Developer</h3>
+              <p>Work across the interface, server and database.</p>
+              <ul class="mini-tags"><li>React</li><li>Node.js</li><li>SQL</li></ul>
+            </a>
+          </li>
+          <li>
+            <a class="career-card" href="assessment.html?role=data">
+              <span class="tile"><span class="icon" data-icon="data"></span></span>
+              <h3>Data Analyst</h3>
+              <p>Turn raw numbers into clear answers.</p>
+              <ul class="mini-tags"><li>SQL</li><li>Python</li><li>Charts</li></ul>
+            </a>
+          </li>
+          <li>
+            <a class="career-card" href="assessment.html?role=security">
+              <span class="tile"><span class="icon" data-icon="security"></span></span>
+              <h3>Cybersecurity Analyst</h3>
+              <p>Find weak spots before attackers do.</p>
+              <ul class="mini-tags"><li>Networking</li><li>Linux</li><li>Python</li></ul>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section class="section" id="how">
+      <div class="container">
+        <div class="section__head">
+          <h2>From “where am I?” to a plan in three steps</h2>
+        </div>
+
+        <ol class="steps">
+          <li class="step">
+            <span class="step__num">1</span>
+            <h3>Choose your target role</h3>
+            <p>Start with the career you want. We map the skills it usually asks for.</p>
+          </li>
+          <li class="step">
+            <span class="step__num">2</span>
+            <h3>Mark what you already know</h3>
+            <p>Tick off the languages, frameworks and tools you're comfortable with.</p>
+          </li>
+          <li class="step">
+            <span class="step__num">3</span>
+            <h3>Follow your roadmap</h3>
+            <p>See your gaps ranked by priority, then work through a week-by-week plan.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+
+    <!-- ============ FINAL CALL TO ACTION ============ -->
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="cta-band">
+          <div>
+            <h2>Ready to see your gap?</h2>
+            <p>It takes about two minutes to pick a role and mark your skills.</p>
+          </div>
+          <a class="btn btn--primary btn--lg" href="assessment.html">Analyze My Skills</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <a class="brand" href="index.html">
+        <span class="brand__mark" data-icon="logo"></span>
+        <span class="brand__name">SkillGap</span>
+      </a>
+      <nav aria-label="Footer">
+        <a href="assessment.html">Assessment</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="analyzer.html">Job Analyzer</a>
+      </nav>
+      <p>© 2026 SkillGap. Built for students and freshers.</p>
+    </div>
+  </footer>
+
+  <script src="icons.js"></script>
+  <script src="main.js"></script>
+</body>
+>>>>>>> c98505c (index.html pushed)
 </html>
