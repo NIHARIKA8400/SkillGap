@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Job Analyzer | SkillGap</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="app">
+
+    <!-- ============ SIDEBAR ============ -->
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="index.html" aria-label="SkillGap home">
+        <span class="brand__mark" data-icon="logo"></span>
+        <span class="brand__name">SkillGap</span>
+      </a>
+
+      <nav class="side-nav" aria-label="Main">
+        <a class="side-link" href="dashboard.html"><span class="icon" data-icon="dashboard"></span>Dashboard</a>
+        <a class="side-link" href="dashboard.html#skills"><span class="icon" data-icon="code"></span>My Skills</a>
+        <a class="side-link" href="dashboard.html#gaps"><span class="icon" data-icon="target"></span>Skill Gap</a>
+        <a class="side-link" href="roadmap.html"><span class="icon" data-icon="route"></span>Roadmap</a>
+        <a class="side-link" href="analyzer.html" aria-current="page"><span class="icon" data-icon="file"></span>Job Analyzer</a>
+        <a class="side-link" href="#"><span class="icon" data-icon="sliders"></span>Settings</a>
+      </nav>
+
+      <div class="side-card">
+        <p>Target role</p>
+        <strong>Frontend Developer</strong>
+        <a href="assessment.html">Change role</a>
+      </div>
+    </aside>
+
+    <div class="scrim"></div>
+
+    <div>
+      <div class="topbar">
+        <a class="brand" href="index.html" aria-label="SkillGap home">
+          <span class="brand__mark" data-icon="logo"></span>
+          <span class="brand__name">SkillGap</span>
+        </a>
+        <button class="menu-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="sidebar" aria-label="Open menu">
+          <span class="icon" data-icon="menu"></span>
+        </button>
+      </div>
+
+      <main class="page" id="main">
+
+        <div class="page-head">
+          <div>
+            <h1>Job Description Analyzer</h1>
+            <p>See how well your skills match a real job posting.</p>
+          </div>
+        </div>
+
+        <!-- ============ INPUT ============ -->
+        <form class="analyzer-input panel" id="analyzer-form" novalidate>
+          <label for="job-text">Paste a job description</label>
+          <textarea id="job-text" name="job" placeholder="Paste the job description here..."></textarea>
+
+          <p class="form-error" id="job-error" role="alert" hidden>
+            <span class="icon" data-icon="info"></span>
+            Paste a job description first, then choose Analyze Job.
+          </p>
+
+          <div class="analyzer-actions">
+            <button class="btn btn--primary" id="analyze-job" type="submit">Analyze Job</button>
+            <button class="btn btn--ghost" id="use-sample" type="button">Use a sample job description</button>
+          </div>
+        </form>
+
+
+        <!-- ============ EMPTY STATE (hidden once results show) ============ -->
+        <div class="empty-state" id="empty-state">
+          <h2>Your results will show up here</h2>
+          <p>Paste a job description above and choose Analyze Job to see which skills you already match.</p>
+        </div>
+
+
+        <!-- ============ RESULTS (static example data for now) ============ -->
+        <section class="results" id="results" aria-label="Analysis results" hidden>
+
+          <div class="match panel">
+            <div>
+              <h2>Job Match</h2>
+              <div class="match__num">72%</div>
+            </div>
+            <div>
+              <!-- Change --value (0–100) to change the bar -->
+              <div class="gapbar gapbar--lg" style="--value: 72" role="img" aria-label="Job match: 72 percent">
+                <div class="gapbar__fill"></div>
+              </div>
+              <p class="match__text">Strong on the fundamentals. React and REST APIs are the main things holding you back.</p>
+            </div>
+          </div>
+
+          <div class="match-cols">
+            <section class="panel" aria-labelledby="matched-title">
+              <h2 id="matched-title">Matched Skills</h2>
+              <ul class="tag-list">
+                <li class="tag tag--have"><span class="icon" data-icon="check"></span>HTML</li>
+                <li class="tag tag--have"><span class="icon" data-icon="check"></span>CSS</li>
+                <li class="tag tag--have"><span class="icon" data-icon="check"></span>JavaScript</li>
+                <li class="tag tag--have"><span class="icon" data-icon="check"></span>Git</li>
+              </ul>
+            </section>
+
+            <section class="panel" aria-labelledby="missing-title">
+              <h2 id="missing-title">Missing Skills</h2>
+              <ul class="tag-list">
+                <li class="tag tag--missing"><span class="icon" data-icon="x"></span>React</li>
+                <li class="tag tag--missing"><span class="icon" data-icon="x"></span>TypeScript</li>
+                <li class="tag tag--missing"><span class="icon" data-icon="x"></span>REST APIs</li>
+              </ul>
+            </section>
+          </div>
+
+          <section class="panel" aria-labelledby="biggest-title">
+            <div class="panel__head">
+              <h2 id="biggest-title">Your Biggest Skill Gaps</h2>
+            </div>
+            <ul class="gap-list">
+              <li class="gap-row">
+                <span class="tile tile--bad"><span class="icon" data-icon="atom"></span></span>
+                <div><div class="gap-row__name">React</div><div class="gap-row__why">Listed as a core requirement</div></div>
+                <span class="badge badge--high">High</span><span class="meter meter--3" aria-hidden="true"><i></i><i></i><i></i></span>
+              </li>
+              <li class="gap-row">
+                <span class="tile tile--bad"><span class="icon" data-icon="link"></span></span>
+                <div><div class="gap-row__name">REST APIs</div><div class="gap-row__why">Mentioned in the day-to-day duties</div></div>
+                <span class="badge badge--high">High</span><span class="meter meter--3" aria-hidden="true"><i></i><i></i><i></i></span>
+              </li>
+              <li class="gap-row">
+                <span class="tile tile--warn"><span class="icon" data-icon="type"></span></span>
+                <div><div class="gap-row__name">TypeScript</div><div class="gap-row__why">Listed as a preferred skill</div></div>
+                <span class="badge badge--medium">Medium</span><span class="meter meter--2" aria-hidden="true"><i></i><i></i><i></i></span>
+              </li>
+            </ul>
+            <div class="gap-list__foot">
+              <a class="btn btn--secondary btn--sm" href="roadmap.html">Add these to my roadmap</a>
+            </div>
+          </section>
+
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <script src="icons.js"></script>
+  <script src="main.js"></script>
+  <script src="analyzer.js"></script>
+</body>
+</html>
