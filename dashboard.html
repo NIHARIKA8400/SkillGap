@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard | SkillGap</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="app">
+
+    <!-- ============ SIDEBAR (copy this block to every app page) ============ -->
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="index.html" aria-label="SkillGap home">
+        <span class="brand__mark" data-icon="logo"></span>
+        <span class="brand__name">SkillGap</span>
+      </a>
+
+      <nav class="side-nav" aria-label="Main">
+        <a class="side-link" href="dashboard.html" aria-current="page"><span class="icon" data-icon="dashboard"></span>Dashboard</a>
+        <a class="side-link" href="dashboard.html#skills"><span class="icon" data-icon="code"></span>My Skills</a>
+        <a class="side-link" href="dashboard.html#gaps"><span class="icon" data-icon="target"></span>Skill Gap</a>
+        <a class="side-link" href="roadmap.html"><span class="icon" data-icon="route"></span>Roadmap</a>
+        <a class="side-link" href="analyzer.html"><span class="icon" data-icon="file"></span>Job Analyzer</a>
+        <!-- Settings has no page yet. Point this at settings.html when you build it. -->
+        <a class="side-link" href="#"><span class="icon" data-icon="sliders"></span>Settings</a>
+      </nav>
+
+      <div class="side-card">
+        <p>Target role</p>
+        <strong>Frontend Developer</strong>
+        <a href="assessment.html">Change role</a>
+      </div>
+    </aside>
+
+    <div class="scrim"></div>
+
+    <div>
+      <!-- Top bar (only visible on small screens) -->
+      <div class="topbar">
+        <a class="brand" href="index.html" aria-label="SkillGap home">
+          <span class="brand__mark" data-icon="logo"></span>
+          <span class="brand__name">SkillGap</span>
+        </a>
+        <button class="menu-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="sidebar" aria-label="Open menu">
+          <span class="icon" data-icon="menu"></span>
+        </button>
+      </div>
+
+      <main class="page" id="main">
+
+        <!-- ============ PAGE HEADER ============ -->
+        <div class="page-head">
+          <div>
+            <!-- main.js swaps "morning" for afternoon / evening automatically -->
+            <h1 data-greeting>Good morning, there! 👋</h1>
+            <p>Here's how close you are to your first tech role.</p>
+          </div>
+          <div class="role-pill">
+            <span>Target role: <strong>Frontend Developer</strong></span>
+            <a href="assessment.html">Change</a>
+          </div>
+        </div>
+
+
+        <!-- ============ READINESS + STATS ============ -->
+        <div class="dash-top">
+
+          <section class="readiness panel" aria-labelledby="readiness-title">
+            <div class="ring" style="--value: 68" role="img" aria-label="Career readiness: 68 percent">
+              <svg viewBox="0 0 120 120" aria-hidden="true">
+                <defs>
+                  <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0" stop-color="#38bdf8"/>
+                    <stop offset="0.5" stop-color="#6366f1"/>
+                    <stop offset="1" stop-color="#8b5cf6"/>
+                  </linearGradient>
+                </defs>
+                <circle class="ring__track" cx="60" cy="60" r="52" pathLength="100"/>
+                <circle class="ring__value" cx="60" cy="60" r="52" pathLength="100"/>
+              </svg>
+              <div class="ring__label"><strong>68%</strong><span>Career Readiness</span></div>
+            </div>
+
+            <div>
+              <h2 id="readiness-title">You're most of the way there</h2>
+              <p class="readiness__text">You cover the fundamentals. Four high-priority gaps stand between you and job-ready.</p>
+
+              <!-- Coverage by area. Change --value on each bar (0–100). -->
+              <ul class="coverage">
+                <li>
+                  <span>JavaScript</span><span>85%</span>
+                  <div class="gapbar" style="--value: 85" role="img" aria-label="JavaScript: 85 percent"><div class="gapbar__fill"></div></div>
+                </li>
+                <li>
+                  <span>Tools and workflow</span><span>80%</span>
+                  <div class="gapbar" style="--value: 80" role="img" aria-label="Tools and workflow: 80 percent"><div class="gapbar__fill"></div></div>
+                </li>
+                <li>
+                  <span>APIs and data</span><span>45%</span>
+                  <div class="gapbar" style="--value: 45" role="img" aria-label="APIs and data: 45 percent"><div class="gapbar__fill"></div></div>
+                </li>
+                <li>
+                  <span>Frameworks</span><span>30%</span>
+                  <div class="gapbar" style="--value: 30" role="img" aria-label="Frameworks: 30 percent"><div class="gapbar__fill"></div></div>
+                </li>
+              </ul>
+
+              <div class="legend">
+                <span><i></i>Skills you have</span>
+                <span><i class="is-gap"></i>Gap to close</span>
+              </div>
+            </div>
+          </section>
+
+          <div class="stats">
+            <div class="stat panel">
+              <div>
+                <div class="stat__num">12</div>
+                <div class="stat__label">Skills Known</div>
+              </div>
+              <span class="tile tile--good"><span class="icon" data-icon="check"></span></span>
+            </div>
+            <div class="stat panel">
+              <div>
+                <div class="stat__num">6</div>
+                <div class="stat__label">Skills Missing</div>
+              </div>
+              <span class="tile tile--warn"><span class="icon" data-icon="target"></span></span>
+            </div>
+            <div class="stat panel">
+              <div>
+                <div class="stat__num">4</div>
+                <div class="stat__label">High Priority</div>
+              </div>
+              <span class="tile tile--bad"><span class="icon" data-icon="flag"></span></span>
+            </div>
+          </div>
+
+        </div>
+
+
+        <!-- ============ YOUR SKILLS + SKILL GAPS ============ -->
+        <div class="dash-mid">
+
+          <section class="panel" id="skills" aria-labelledby="skills-title">
+            <div class="panel__head">
+              <h2 id="skills-title">Your Skills</h2>
+              <a class="panel__link" href="assessment.html">Edit skills</a>
+            </div>
+            <div class="skill-groups">
+              <div class="skill-group">
+                <h3>Languages</h3>
+                <ul class="tag-list">
+                  <li class="tag tag--have"><span class="icon" data-icon="check"></span>Python</li>
+                  <li class="tag tag--have"><span class="icon" data-icon="check"></span>Java</li>
+                  <li class="tag tag--have"><span class="icon" data-icon="check"></span>C++</li>
+                </ul>
+              </div>
+              <div class="skill-group">
+                <h3>Frontend</h3>
+                <ul class="tag-list">
+                  <li class="tag tag--have"><span class="icon" data-icon="check"></span>HTML</li>
+                  <li class="tag tag--have"><span class="icon" data-icon="check"></span>CSS</li>
+                  <li class="tag tag--have"><span class="icon" data-icon="check"></span>JavaScript</li>
+                </ul>
+              </div>
+              <div class="skill-group">
+                <h3>Backend</h3>
+                <ul class="tag-list">
+                  <li class="tag tag--have"><span class="icon" data-icon="check"></span>Node.js</li>
+                  <li class="tag tag--have"><span class="icon" data-icon="check"></span>Express</li>
+                </ul>
+              </div>
+              <div class="skill-group">
+                <h3>Database</h3>
+                <ul class="tag-list">
+                  <li class="tag tag--have"><span class="icon" data-icon="check"></span>SQL</li>
+                  <li class="tag tag--have"><span class="icon" data-icon="check"></span>MongoDB</li>
+                </ul>
+              </div>
+              <div class="skill-group">
+                <h3>Tools</h3>
+                <ul class="tag-list">
+                  <li class="tag tag--have"><span class="icon" data-icon="check"></span>Git</li>
+                  <li class="tag tag--have"><span class="icon" data-icon="check"></span>GitHub</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel" id="gaps" aria-labelledby="gaps-title">
+            <div class="panel__head">
+              <h2 id="gaps-title">Skill Gaps</h2>
+              <a class="panel__link" href="roadmap.html">See roadmap</a>
+            </div>
+            <ul class="gap-list">
+              <li class="gap-row">
+                <span class="tile tile--bad"><span class="icon" data-icon="atom"></span></span>
+                <div><div class="gap-row__name">React</div><div class="gap-row__why">Most frontend job posts ask for it</div></div>
+                <span class="badge badge--high">High</span>
+              </li>
+              <li class="gap-row">
+                <span class="tile tile--warn"><span class="icon" data-icon="type"></span></span>
+                <div><div class="gap-row__name">TypeScript</div><div class="gap-row__why">Makes larger projects safer to change</div></div>
+                <span class="badge badge--medium">Medium</span>
+              </li>
+              <li class="gap-row">
+                <span class="tile tile--bad"><span class="icon" data-icon="link"></span></span>
+                <div><div class="gap-row__name">REST APIs</div><div class="gap-row__why">Every real app talks to a server</div></div>
+                <span class="badge badge--high">High</span>
+              </li>
+              <li class="gap-row">
+                <span class="tile tile--bad"><span class="icon" data-icon="terminal"></span></span>
+                <div><div class="gap-row__name">Testing (Jest)</div><div class="gap-row__why">Shows you can ship reliable code</div></div>
+                <span class="badge badge--high">High</span>
+              </li>
+              <li class="gap-row">
+                <span class="tile tile--bad"><span class="icon" data-icon="eye"></span></span>
+                <div><div class="gap-row__name">Web accessibility</div><div class="gap-row__why">Expected on every professional team</div></div>
+                <span class="badge badge--high">High</span>
+              </li>
+              <li class="gap-row">
+                <span class="tile"><span class="icon" data-icon="design"></span></span>
+                <div><div class="gap-row__name">Tailwind CSS</div><div class="gap-row__why">Nice to have, quick to pick up</div></div>
+                <span class="badge badge--low">Low</span>
+              </li>
+            </ul>
+          </section>
+
+        </div>
+
+
+        <!-- ============ RECOMMENDED NEXT STEPS ============ -->
+        <section aria-labelledby="next-title">
+          <h2 class="next-title" id="next-title">Recommended Next Steps</h2>
+          <div class="next-grid">
+
+            <a class="next-card" href="roadmap.html">
+              <span class="tile"><span class="icon" data-icon="atom"></span></span>
+              <h3>Learn React fundamentals</h3>
+              <p>Components, props and state. The base for everything else in modern frontend work.</p>
+              <span class="next-card__meta"><span class="icon" data-icon="clock"></span>About 1 week</span>
+            </a>
+
+            <a class="next-card" href="roadmap.html">
+              <span class="tile"><span class="icon" data-icon="link"></span></span>
+              <h3>Practice with REST APIs</h3>
+              <p>Fetch data from a public API and show it on a page.</p>
+              <span class="next-card__meta"><span class="icon" data-icon="clock"></span>About 1 week</span>
+            </a>
+
+            <a class="next-card" href="roadmap.html">
+              <span class="tile"><span class="icon" data-icon="type"></span></span>
+              <h3>Add TypeScript to a project</h3>
+              <p>Convert a small JavaScript project and let the compiler catch your bugs.</p>
+              <span class="next-card__meta"><span class="icon" data-icon="clock"></span>About 1 week</span>
+            </a>
+
+            <a class="next-card" href="roadmap.html">
+              <span class="tile"><span class="icon" data-icon="flag"></span></span>
+              <h3>Build a portfolio project</h3>
+              <p>Put it all together in one app you can show to recruiters.</p>
+              <span class="next-card__meta"><span class="icon" data-icon="clock"></span>About 1 week</span>
+            </a>
+
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <script src="icons.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
