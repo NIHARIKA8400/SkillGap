@@ -512,7 +512,7 @@ svg { display: block; max-width: 100%; }
 .hero__from::before,
 .hero__to::before {
   content: "";
-  position: absolute;
+  position: sticky;
   left: -1.9rem;
   top: calc(0.52em - 7px);
   width: 14px;
@@ -530,7 +530,7 @@ svg { display: block; max-width: 100%; }
 /* the dashed path between the two markers */
 .hero__from::after {
   content: "";
-  position: absolute;
+  position: sticky;
   left: calc(-1.9rem + 6px);
   top: calc(0.52em + 7px);
   bottom: calc(-0.66em + 7px);
@@ -1391,7 +1391,7 @@ svg { display: block; max-width: 100%; }
   .site-header__inner { min-height: 64px; }
 
   .hero__actions .btn { width: 100%; }
-  .preview__float { position: static; margin-top: 1rem; }
+  .preview__float { position: sticky; margin-top: 1rem; }
   .hero__preview { padding-bottom: 0; }
 
   .role-grid { grid-template-columns: 1fr; }
